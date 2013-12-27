@@ -1,15 +1,15 @@
 def binary_search(item, li, index=0):
-    '''binary search
+    '''Returns the index of the item in li.
 
     precondition:
         item is in the list
         list is sorted
         
-    returns the index of the item
+    
 
     >>> l = [1, 2, 3, 4, 5]
-    >>> print(binary_search(1, l))
-    0
+    >>> print(binary_search(3, l))
+    2
 
     '''
     if len(li) == 1:
@@ -24,3 +24,8 @@ def binary_search(item, li, index=0):
             return binary_search(item, right, index)
         if item < li[mid]:
             return binary_search(item, left, index)
+
+
+if __name__ == '__main__':
+    l = [1, 2, 3, 4, 5]
+    print(binary_search(3, l))
